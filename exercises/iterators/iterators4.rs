@@ -13,8 +13,17 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
-}
 
+    // Recursive
+
+    // match num {
+    //     0 => 1,
+    //     _ => num * factorial(num - 1),
+    // }
+
+    // Fold solution, looked it up, interesting.
+    (1..=num).fold(1, (|acc, x| acc * x))
+}
 #[cfg(test)]
 mod tests {
     use super::*;
